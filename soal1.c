@@ -44,7 +44,6 @@ int main()
             if (h[j] <= h[i]) a[i]++;
             else break;
         }
-        printf("%d\n", a[i]);
     }
 
     // Menjumlahkan nilai bebek yang bisa diintip
