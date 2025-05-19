@@ -17,10 +17,10 @@ int main()
         printf("Angka di luar interval, keluar program...\n");
         return 1;
     }
-    
+
     int h[n]; // tinggi bebek
     int a[n]; // banyak bebek yang bisa diintip
-    
+
     for (int i = 0; i < n; i++)
     {
         // Input masing2 tinggi bebek
@@ -41,8 +41,10 @@ int main()
         a[i] = 1; // masing2 bebek bisa mengintip diri sendiri
         for (int j = i - 1; j >= 0; j--)
         {
-            if (h[j] <= h[i]) a[i]++;
-            else break;
+            if (h[j] <= h[i])
+                a[i]++;
+            else
+                break;
         }
     }
 
