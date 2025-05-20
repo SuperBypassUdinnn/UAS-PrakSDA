@@ -3,8 +3,7 @@
 #include <string.h>
 
 #define MAX_N 8
-// 8! = 40320, jumlah maksimum permutasi
-#define FAKTORIAL_8 40320  
+#define FAKTORIAL_8 40320  // 8! = 40320, jumlah maksimum permutasi
 
 typedef struct {
     int data[MAX_N];
@@ -70,13 +69,19 @@ int main() {
     printf("Masukkan nilai N (jumlah elemen dalam permutasi): ");
     scanf("%d", &N);
 
+    printf("Masukkan nilai K (jumlah elemen yang dibalik dalam satu langkah): ");
+    scanf("%d", &K);
+
+    // Validasi input
+    if (N < 2 || N > MAX_N || K < 2 || K > N) {
+        printf("Input tidak valid. Pastikan 2 <= K <= N <= %d\n", MAX_N);
+        return 1;
+    }
+
     printf("Masukkan %d angka (permutasi dari 1 sampai %d): ", N, N);
     for (int i = 0; i < N; i++) {
         scanf("%d", &awal[i]);
     }
-
-    printf("Masukkan nilai K (jumlah elemen yang dibalik dalam satu langkah): ");
-    scanf("%d", &K);
 
     // Array untuk menandai state yang sudah pernah dikunjungi
     char visited[FAKTORIAL_8] = {0};
