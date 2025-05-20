@@ -53,6 +53,11 @@ int main() {
     }
     free(outputArray);
 
+    for (int i = 0; i < count; i++) {
+        free(groupArray[i].data);
+    }
+    free(groupArray);
+
 
     return 0;
 }
