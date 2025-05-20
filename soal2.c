@@ -43,7 +43,7 @@ int main() {
             out(l, z);
         }
         else{
-            printf("Input tidak valid");
+            printf("Input tidak valid.\n");
             i--;
             continue;
         }
@@ -82,7 +82,7 @@ void add(int l, int x, int y) {
         printf("Group %d tidak ditemukan.\n", l);
         return;
     }
-
+    
     groupArray[i].data = realloc(groupArray[i].data, (groupArray[i].size + y) * sizeof(int));
     for (int j = 0; j < y; j++) {
         groupArray[i].data[groupArray[i].size + j] = x;
@@ -93,6 +93,11 @@ void add(int l, int x, int y) {
 //fungsi untuk menyimpan nilai yang akan diprint
 void out(int l, int z) {
     int i = l - 1;
+    //mengecek group ada atau tidak
+    if (i >= groupCount || i < 0) {
+        printf("Group %d tidak ditemukan.\n", l);
+        return;
+    }
 
     //cek indeks
     if (i >= groupCount || i < 0 || z < 1 || z > groupArray[i].size) {
