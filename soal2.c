@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+void new();
+void add(int, int, int);
+void out(int, int);
+
 int main() {
     int Q;
     printf("Masukkan jumlah command: ");
