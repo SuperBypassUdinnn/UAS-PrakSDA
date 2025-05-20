@@ -3,7 +3,8 @@
 #include <string.h>
 
 #define MAX_N 8
-#define FAKTORIAL_8 40320  //8! = 40320, jumlah maksimum permutasi
+// 8! = 40320, jumlah maksimum permutasi
+#define FAKTORIAL_8 40320  
 
 typedef struct {
     int data[MAX_N];
