@@ -7,12 +7,22 @@ int main() {
     //Menginput panjang array
     printf("Masukkan input :\n");
     scanf("%d", &T);        // inputan pertama untuk menentukan jumlah baris berikutnya 
-
+    
+    if(T < 1 || T > 1000) //batasan
+    {
+        printf("Input tidak valid\n1 <= bilangan yang diinput <= 1000");
+        return 1;
+    }
     //deklarasi array N untuk simpan bil.n
     int N[T];
     
     for(int i = 0; i < T; i++){ //menerima dan memasukkan setiap nilai n ke array N
         scanf("%d", &N[i]); 
+        if(N[i] < 1 || N[i] > 1000) 
+        {
+            printf("Input tidak valid\n1 <= bilangan yang diinput <= 1000");
+            return 1;
+        }
     } 
     
     printf("\noutput :\n");
