@@ -14,26 +14,38 @@ int outputCount = 0;       //jumlah output yang disimpan
 
 //deklarasi fungsi
 void new();
-void add(int, int, int);
-void out(int, int);
+void add(int l, int x, int y);
+void out(int l, int z);
 
 int main() {
     int Q; //total command yang akan diterima
-    printf("Masukkan jumlah command: ");
-    scanf("%d", &Q);
+    do {
+        printf("Masukkan jumlah command (1-1000): ");
+        scanf("%d", &Q);
+        if (Q < 1 || Q > 1000) {
+            printf("Jumlah command harus antara 1 dan 1000.\n");
+        }
+    } while (Q < 1 || Q > 1000);
     
-    new(); // buat group array kosong
+    
+    new(); // buat group array kosong pertama
     
     printf("Masukkan %d command\n", Q);
     char command[10];
     for (int i=0; i<Q; i++){
         scanf("%s", command);
-        
-        if (strcmp(command, "add") == 0) {  
+        if (strcmp(command, "add") == 0) {
             int l, x, y;
             scanf("%d %d %d", &l, &x, &y);
+
+            if (x < 1 || x > 10000 || y < 1 || y > 10000) {
+                printf("Nilai x dan y harus dalam rentang 1 hingga 10000.\n");
+                i--; 
+                continue;
+            }
+
             add(l, x, y);
-        } 
+        }
         else if (strcmp(command, "new") == 0) {  
             new();
         } 
